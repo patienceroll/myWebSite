@@ -32,6 +32,7 @@ class Header extends React.Component {
 
     state = {
         isPause: true,
+        sideBarBtnX: false,
         currentMusic: 'Buckethead-PaleHill.mp3',
         musicList: [
             'Buckethead-PaleHill.mp3',
@@ -45,6 +46,13 @@ class Header extends React.Component {
 
     componentDidMount() {
 
+    }
+
+    openSideBar() {
+        const { sideBarBtnX } = this.state;
+        this.setState({
+            sideBarBtnX: !sideBarBtnX
+        })
     }
 
     // 只要歌曲暂停了就会触发，但是只有播放状态是自动停止才会有实际响应
@@ -100,9 +108,10 @@ class Header extends React.Component {
     }
 
     render() {
-        const { isPause, currentMusic } = this.state;
+        const { isPause, currentMusic, sideBarBtnX } = this.state;
 
         return <div className='header'>
+
             {/* 音乐播放器控件 */}
             <div className='controler'>
                 <div className='wiget' >
@@ -124,6 +133,7 @@ class Header extends React.Component {
                     type="audio/mpeg"
                 ></audio>
             </div>
+
             {/* 联系方式 */}
             <div className='contactWay'>
                 <div className='phone'>
@@ -135,6 +145,13 @@ class Header extends React.Component {
                     <Icon type="mail" />
                     <span>1079105171@qq.com</span>
                 </div>
+            </div>
+
+            {/* 侧边栏按钮 */}
+            <div className='sideBarBtn' onClick={this.openSideBar.bind(this)}>
+                <div className={sideBarBtnX ? 'line1' : 'line1 line1Rotate'}></div>
+                <div className={sideBarBtnX ? 'line2' : 'line2 line2Rotate'}></div>
+                <div className={sideBarBtnX ? 'line3' : 'line3 line3Rotate'}></div>
             </div>
         </div>
     }

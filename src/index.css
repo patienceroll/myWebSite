@@ -81,6 +81,50 @@
     vertical-align: middle;
     float: left;
   }
+
+
+  /* 侧边栏按钮及侧边栏样式 */
+  .sideBarBtn{
+    position: fixed;
+    top: 3.25rem;
+    right: 3.25rem;
+    height: 2rem;
+    width: 2rem;
+    overflow: hidden;
+   
+  }
+  .line1{
+    width: 3.25rem;
+    height: 0.2rem;
+    margin-bottom: 0.53rem;
+    border-top: 0.2rem solid #fff;
+    transition: all 1s;
+    transform-origin: 0 0;
+
+  }
+  .line1Rotate{
+    transform: rotate(43deg);
+  }
+  .line2{
+    width: 3.25rem;
+    height: 0.2rem;
+    margin-bottom: 0.53rem;
+    border-top: 0.2rem solid #fff;
+    transition: all 1s;
+  }
+  .line2Rotate{
+    transform: translateX(100%);
+  }
+  .line3{
+    width: 3.25rem;
+    height: 0.2rem;
+    border-top: 0.2rem solid #fff;
+    transition: all 1s;
+    transform-origin:  0 0;
+  }
+  .line3Rotate{
+    transform: rotate(-43deg);
+  }
 }
 
 
