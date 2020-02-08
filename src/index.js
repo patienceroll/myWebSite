@@ -103,6 +103,7 @@ class Header extends React.Component {
         const { isPause, currentMusic } = this.state;
 
         return <div className='header'>
+            {/* 音乐播放器控件 */}
             <div className='controler'>
                 <div className='wiget' >
                     {/* 播放按钮 */}
@@ -123,7 +124,18 @@ class Header extends React.Component {
                     type="audio/mpeg"
                 ></audio>
             </div>
-
+            {/* 联系方式 */}
+            <div className='contactWay'>
+                <div className='phone'>
+                    <Icon type="phone" />
+                    <span>18323183293</span>
+                </div>
+                <div className='obliqueLine'>/</div>
+                <div className='email'>
+                    <Icon type="mail" />
+                    <span>1079105171@qq.com</span>
+                </div>
+            </div>
         </div>
     }
 }

@@ -4,7 +4,47 @@ from {opacity: 0;}
 to {opacity: 1;}
 }
 
+@keyframes in {
+    from{
+        transform: translateY(0px);
+        opacity: 0.4;
+    }
+    to{
+        transform: translateY(-50%);
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width:901px){
+  .contextContainer{
+      position: absolute;
+      box-sizing: border-box;
+      top: 50%;
+      width: 100%;
+      height: 45.1rem;
+      transform: translateY(-50%);
+      padding: 10.26rem 9.166666666rem 6rem ;
+      color:#fff;
+      animation: in 1s ease-out ;
+  }  
+
+  .contextContainer p{
+    font-family:poppins,sans-serif;
+    font-size: 1.166666666rem;
+  }
+
+  .contextContainer div{
+      font-size: 5.14rem;
+      font-weight: 600;
+      margin: 2.8rem 0 4rem ;
+  }
+
+  .contextContainer div span{
+      color:#ffeb00;
+  }
+}
 .homeContainer{
+    position: relative;
     height: 100%;
     width:100%;
     background-image: url(../../Assets/image/bg1.png);
@@ -12,4 +52,5 @@ to {opacity: 1;}
     background-position: center;
     background-repeat: no-repeat;
     animation: change 1.5s;
+    overflow: hidden;
 }
