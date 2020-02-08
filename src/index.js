@@ -31,17 +31,68 @@ class NavListIcon extends React.Component {
 class Header extends React.Component {
 
     state = {
-        isPause: true
+        isPause: true,
+        currentMusic: 'Buckethead-PaleHill.mp3',
+        musicList: [
+            'Buckethead-PaleHill.mp3',
+            'Buckethead - Electric Sea.mp3',
+            'Buckethead - Stretching Lighthouse.mp3',
+            "Eagles - I Can't Tell You Why.mp3",
+            'Eagles - Waiting in the Weeds.mp3',
+            'Steve Vai - Boston Rain Melody.mp3'
+        ]
     }
 
     componentDidMount() {
-        
+
+    }
+
+    // 只要歌曲暂停了就会触发，但是只有播放状态是自动停止才会有实际响应
+    // 也就是说 isPause 为 false
+    onMusicPause() {
+        const { isPause } = this.state;
+        // 自动停止时的响应(非点击播放按钮导致的暂停)
+        // eslint-disable-next-line
+        !isPause && this.setState({
+            isPause: true
+        }, this.playNextMusic)
+    }
+
+    onMusicPlay() {
+        const { isPause } = this.state;
+        // 自动播放时的响应(非点击播放按钮导致的播放)
+        // eslint-disable-next-line
+        isPause && this.setState({
+            isPause: false
+        })
+    }
+
+    // 目前只是下一首歌曲的控件
+    playNextMusic() {
+        const { currentMusic, musicList } = this.state;
+        const { current } = audioRef;
+        // 暂停播放
+        this.setState({
+            isPause: true
+        })
+        current.pause();
+        // 改变 src 路径并自动播放 (当前是随机播放)
+        const currentIndex = musicList.findIndex(item => item === currentMusic);
+        let nextIndex = Math.floor(Math.random() * musicList.length);
+
+        while (currentIndex === nextIndex) {
+            nextIndex = Math.floor(Math.random() * musicList.length);
+        }
+        this.setState({
+            currentMusic: musicList[nextIndex]
+        }, () => current.play())
     }
 
     changePlayState() {
         const { isPause } = this.state;
-        const {current} = audioRef;
-        console.dir(current);
+        const { current } = audioRef;
+        // 当值为 true(暂停) 时播放，反之则相反
+        // eslint-disable-next-line 
         isPause && current.play() || current.pause();
         this.setState({
             isPause: !isPause
@@ -49,15 +100,28 @@ class Header extends React.Component {
     }
 
     render() {
-        const { isPause } = this.state;
+        const { isPause, currentMusic } = this.state;
 
         return <div className='header'>
             <div className='controler'>
-                <div className='wiget' onClick={this.changePlayState.bind(this)}>
-                    <Icon type={isPause ? 'play-circle' : "pause-circle"} />
+                <div className='wiget' >
+                    {/* 播放按钮 */}
+                    <Icon onClick={this.changePlayState.bind(this)} type={isPause ? 'play-circle' : "pause-circle"} />
+                    {/* 下一首按钮 */}
+                    <Icon onClick={this.playNextMusic.bind(this)} type="step-forward" className='nextMusic' />
                 </div>
 
-                <audio ref={audioRef} className='audio' src='./music/Buckethead-PaleHill.mp3' type="audio/mpeg"></audio>
+                <div className='musicTitle'>
+                    <span>{currentMusic}</span>
+                </div>
+
+                <audio
+                    ref={audioRef}
+                    onPause={this.onMusicPause.bind(this)}
+                    onPlay={this.onMusicPlay.bind(this)}
+                    className='audio' src={'./music/' + currentMusic}
+                    type="audio/mpeg"
+                ></audio>
             </div>
 
         </div>
