@@ -1,20 +1,3 @@
-@keyframes change
-{
-from {opacity: 0;}
-to {opacity: 1;}
-}
-
-@keyframes in {
-    from{
-        transform: translateY(0px);
-        opacity: 0.4;
-    }
-    to{
-        transform: translateY(-50%);
-        opacity: 1;
-    }
-}
-
 @media screen and (min-width:901px){
   .contextContainer{
       position: absolute;

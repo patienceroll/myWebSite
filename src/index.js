@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 // 样式
 import './initStyle.css';
+import './animationCSS/animation.css';
 import './index.css';
 
 // 组件
@@ -12,6 +13,8 @@ import Page3 from './page/page3/page3.jsx';
 import Page4 from './page/page4/page4.jsx';
 
 import { Icon } from 'antd';
+// 自定义图标
+
 
 // 音乐播放标签 ref
 const audioRef = React.createRef();
@@ -32,6 +35,7 @@ class Header extends React.Component {
 
     state = {
         isPause: true,
+        // 值为false意思为图标不为 x
         sideBarBtnX: false,
         currentMusic: 'Buckethead-PaleHill.mp3',
         musicList: [
@@ -48,12 +52,14 @@ class Header extends React.Component {
 
     }
 
-    openSideBar() {
+    tuggleSideBar() {
         const { sideBarBtnX } = this.state;
         this.setState({
             sideBarBtnX: !sideBarBtnX
         })
     }
+
+
 
     // 只要歌曲暂停了就会触发，但是只有播放状态是自动停止才会有实际响应
     // 也就是说 isPause 为 false
@@ -148,11 +154,59 @@ class Header extends React.Component {
             </div>
 
             {/* 侧边栏按钮 */}
-            <div className='sideBarBtn' onClick={this.openSideBar.bind(this)}>
-                <div className={sideBarBtnX ? 'line1' : 'line1 line1Rotate'}></div>
-                <div className={sideBarBtnX ? 'line2' : 'line2 line2Rotate'}></div>
-                <div className={sideBarBtnX ? 'line3' : 'line3 line3Rotate'}></div>
+            <div className='sideBarBtn' onClick={this.tuggleSideBar.bind(this)}>
+                <div className={sideBarBtnX ? 'line1 line1Rotate' : 'line1'}></div>
+                <div className={sideBarBtnX ? 'line2 line2Rotate' : 'line2'}></div>
+                <div className={sideBarBtnX ? 'line3 line3Rotate' : 'line3'}></div>
             </div>
+
+            {/* 侧边栏主体 */}
+            <div
+                className={sideBarBtnX ? 'sideBarContainer sideBarContainerDisplay' : 'sideBarContainer'}
+            >
+                <div style={{ width: '100%', height: '100%' }}>
+                    <p className='myName'>张显磊</p>
+                    <div className='livingPlace'>
+                        <Icon type="environment" theme="filled" />
+                        <span>重庆 巴南</span>
+                    </div>
+                    <div className='graduation'>
+                        <Icon type="bank" />
+                        <span>重庆交通大学</span>
+                    </div>
+                    <div className='phoneSideBar'>
+                        <Icon type="phone" theme="filled" />
+                        <span>18323183293</span>
+                    </div>
+                    <div className='emailSideBar'>
+                        <Icon type="mail" />
+                        <span>1079105171@qq.com</span>
+                    </div>
+                    <div className='hobby'>
+                        <Icon type="heart" theme="filled" />
+                        <span>吉他 骑车 听音乐 厨艺</span>
+                    </div>
+                    <div className='myBlog'>
+                        <Icon type="shop" />
+                        <a href="https://blog.csdn.net/qq_40653782" target='blank'>https://blog.csdn.net/qq_40653782</a>
+                    </div>
+                    <div className='myGitHub'>
+                        <Icon type="github" theme="filled" />
+                        <a href="https://github.com/patienceroll" target='blank'>https://github.com/patienceroll</a>
+                    </div>
+                    <div className='myResume'>
+                        <Icon type="idcard" />
+                        <span>下载我的简历</span>
+                    </div>
+                </div>
+            </div>
+
+            {/* 点击侧边栏外侧关闭侧边栏 */}
+            <div
+                className={sideBarBtnX ? 'tapScreenCloseSideBar showTapScreenCloseSideBar' : 'tapScreenCloseSideBar'}
+                onClick={() => this.setState({ sideBarBtnX: false })}
+            ></div>
+
         </div>
     }
 }

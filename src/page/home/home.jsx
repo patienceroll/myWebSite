@@ -1,5 +1,7 @@
 import React from 'react';
 
+// 样式
+import '../../animationCSS/animation.css';
 import './home.css';
 
 import { Icon } from 'antd';
@@ -24,7 +26,7 @@ class Home extends React.Component {
                     <br />
                     欢迎来访!
                 </div>
-                <p>这是patience的个人网站，将持续更新...</p>
+                <p>这是patience的个人网站,将持续更新...</p>
             </div>
         </div>
     }

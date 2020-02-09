@@ -82,8 +82,7 @@
     float: left;
   }
 
-
-  /* 侧边栏按钮及侧边栏样式 */
+  /* 侧边栏按钮样式 */
   .sideBarBtn{
     position: fixed;
     top: 3.25rem;
@@ -91,7 +90,7 @@
     height: 2rem;
     width: 2rem;
     overflow: hidden;
-   
+    z-index:99;
   }
   .line1{
     width: 3.25rem;
@@ -125,28 +124,78 @@
   .line3Rotate{
     transform: rotate(-43deg);
   }
+
+  /* 侧边栏样式 */
+  .sideBarContainer{
+    position: fixed;
+    top:0;
+    right: 0;
+    width: 35%;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #eee;
+    background-color: #272727;
+    transition: all 1s ease-out;
+    visibility: hidden;
+    transform: translateX(100%);
+    padding: 3rem 0 4rem 5rem;
+  }
+  .sideBarContainerDisplay{
+    visibility: visible;
+    transform: translateX(0);
+  }
+  .sideBarContainer i{
+    vertical-align: middle;
+    margin-right: 1.5rem;
+  }
+  .tapScreenCloseSideBar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:65%;
+    height: 100%;
+    display: none;
+  }
+  .showTapScreenCloseSideBar{
+    display: block;
+  }
+  .myName{
+    font-size: 3.25rem;
+    margin: 0;
+  }
+  .livingPlace{
+    margin-top: 4rem;
+  }
+  .graduation{
+    margin-top: 2rem;
+  }
+  .hobby{
+    margin-top: 2rem;
+  }
+  .myGitHub{
+    margin-top: 2rem;
+  }
+  .myBlog{
+    margin-top: 2rem;
+  }
+  .phoneSideBar{
+    margin-top: 2rem;
+  }
+  .emailSideBar{
+    margin-top: 2rem;
+  }
+  .myResume{
+    margin-top: 2rem;
+  }
+  .myGitHub>a,.myBlog>a{
+    font-size: 1.2rem;
+  }
 }
 
 
 /* 公共样式 */
-
-@keyframes change{
-from {opacity: 0;}
-to {opacity: 1;}
-}
-
-@keyframes contextCarousel{
-  0%{
-    transform: translateX(0);
-  }
-  20%{
-    transform: translateX(0);
-  }
-  100%{
-    transform: translateX(-80%);
-  }
-}
-
 /* 音乐播放控件样式 */
 .wiget{
   box-sizing: border-box;
@@ -159,18 +208,15 @@ to {opacity: 1;}
   color: #fff;
   animation: change 4s;
 }
-
 .wiget i{
   vertical-align: bottom;
   user-select: none;
   outline: none;
   cursor: pointer;
 }
-
 .wiget .nextMusic{
   margin-left: 1rem;
 }
-
 .musicTitle{
   float: left;
   overflow: hidden;
@@ -181,13 +227,11 @@ to {opacity: 1;}
   font-size: 1.8rem;
   color: #fff;
 }
-
 .musicTitle span{
   display: inline-block;
   white-space: nowrap;
   animation: contextCarousel 10s linear 2s infinite;
 }
-
 .audio{
   display: none;
 }
