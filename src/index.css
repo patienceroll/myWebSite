@@ -137,7 +137,7 @@
     font-weight: 400;
     color: #eee;
     background-color: #272727;
-    transition: all 1s ease-out;
+    transition: all 0.8s ease-out;
     visibility: hidden;
     transform: translateX(100%);
     padding: 3rem 0 4rem 5rem;

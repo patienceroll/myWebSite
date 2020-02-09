@@ -164,7 +164,7 @@ class Header extends React.Component {
             <div
                 className={sideBarBtnX ? 'sideBarContainer sideBarContainerDisplay' : 'sideBarContainer'}
             >
-                <div style={{ width: '100%', height: '100%' }}>
+                <div style={{ width: '100%', height: '100%', animation: sideBarBtnX ? 'sideBarContextIn 0.8s linear ':null }}>
                     <p className='myName'>张显磊</p>
                     <div className='livingPlace'>
                         <Icon type="environment" theme="filled" />
