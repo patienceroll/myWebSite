@@ -196,7 +196,9 @@ class Header extends React.Component {
                     </div>
                     <div className='myResume'>
                         <Icon type="idcard" />
-                        <span>下载我的简历</span>
+                        <span>简历：</span>
+                        <a href='./resume/张显磊-前端开发工程师.pdf' target='blank'> 预览 </a>
+                        <a href='./resume/张显磊-前端开发工程师.pdf' download='张显磊-前端开发工程师'> 下载 </a>
                     </div>
                 </div>
             </div>
