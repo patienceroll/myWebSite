@@ -95,7 +95,7 @@
   .line1{
     width: 3.25rem;
     height: 0.2rem;
-    margin-bottom: 0.53rem;
+    margin-bottom: 0.715rem;
     border-top: 0.2rem solid #fff;
     transition: all 1s;
     transform-origin: 0 0;
@@ -107,7 +107,7 @@
   .line2{
     width: 3.25rem;
     height: 0.2rem;
-    margin-bottom: 0.53rem;
+    margin-bottom: 0.715rem;
     border-top: 0.2rem solid #fff;
     transition: all 1s;
   }
@@ -209,7 +209,7 @@
   animation: change 4s;
 }
 .wiget i{
-  vertical-align: bottom;
+  vertical-align: top;
   user-select: none;
   outline: none;
   cursor: pointer;

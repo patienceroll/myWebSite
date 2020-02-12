@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // 样式
+import 'antd/dist/antd.css';
 import './initStyle.css';
 import './animationCSS/animation.css';
 import './index.css';
