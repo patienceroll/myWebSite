@@ -6,21 +6,26 @@ import './page4.css';
 // 导入加载中组件
 import ShowLoading from '../../component/loading.jsx';
 
-import { Comment, Icon, Tooltip, Avatar } from 'antd';
+import { Comment, Icon, Tooltip, Avatar, Button } from 'antd';
 
+const textareaRef = React.createRef();
 
 class Page4 extends React.Component {
     state = {
         messageList: [],
         showLoading: true,
         replyCommentText: '',
-        showReplyCommentIpt: false
+        showReplyCommentIpt: false,
+        nameIptValue: '',
+        showIptValueSugget: false,
+        textareaValue: '',
+        diableSubBtn: false
     }
 
     // 获取留言列表数据
     async getMseeageList() {
         const data = await (await fetch('http://localhost:3000/myWebSite/getComments', { mode: 'cors' })).json();
-        this.setState({ messageList: JSON.parse(data), showLoading: false });
+        this.setState({ messageList: JSON.parse(data).reverse(), showLoading: false });
     }
 
 
@@ -57,6 +62,7 @@ class Page4 extends React.Component {
                                     onKeyPress={e => e.charCode === 13 && this.replyComment(index)}
                                     placeholder="请输入回复内容"
                                 />
+                                <span onClick={() => this.replyComment()} className='submitReplyBtn'>确定</span>
                                 <span onClick={() => this.setState({ showReplyCommentIpt: false })} className='cancelReplyBtn'>取消</span>
                             </div>
                             : <span onClick={() => this.setState({ showReplyCommentIpt: true })} className='replyCommentBtn'>回复</span>
@@ -106,7 +112,33 @@ class Page4 extends React.Component {
         }
     }
 
+    replyComment() {
 
+    }
+
+    // 提交留言
+    async submitComment() {
+        const { nameIptValue, textareaValue } = this.state;
+        // 禁用提交按钮
+        this.setState({ diableSubBtn: true });
+        const result =JSON.parse(await (await fetch('http://localhost:3000/myWebSite/submitComment', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: nameIptValue, content: textareaValue }),
+            mode: 'cors'
+        })).json());
+
+
+        if (result.status === 200) {
+            this.getMseeageList();
+            console.dir(textareaRef.current);
+            textareaRef.current.value = '';
+            this.renderMessageList();
+        }
+        // 恢复提交按钮
+        this.setState({ diableSubBtn: false });
+
+    }
 
     componentDidMount() {
         this.getMseeageList();
@@ -115,16 +147,53 @@ class Page4 extends React.Component {
 
 
     render() {
-        const { showLoading } = this.state;
+        const { showLoading, nameIptValue, diableSubBtn,showIptValueSugget } = this.state;
         return <div className='page4Container'>
+
+            {/* 留言板展示列表 */}
             <div className='messageBoard' id='messageBoard'>
                 <div className='messageBoardTitle'>留言板</div>
                 <div className='messageList'>
                     {showLoading ? ShowLoading('留言板加载中...') : this.renderMessageList()}
                 </div>
             </div>
-            <div className='leaveMessageForm'>
 
+            {/* 留言表单 */}
+            <div className='leaveMessageForm'>
+                <div className='leaveMessageFormTitle'>留言</div>
+
+                <div className='leaveMessageFormName'>
+                    <span>姓名(昵称):</span>
+                    <input
+                        placeholder='请输入任意字符作为姓名'
+                        onFocus={e => e.target.style.backgroundColor = "#000"}
+                        onBlur={e => e.target.style.backgroundColor = "transparent"}
+                        onChange={e => this.setState({ nameIptValue: e.target.value, showIptValueSugget: true })}
+                    ></input>
+                </div>
+
+
+                <div className='leaveMessageFormWarm'>
+                    {/^[\u4e00-\u9fa5a-zA-Z0-9]{3,15}$/.test(nameIptValue) ? null : showIptValueSugget ? '请输入3-15位的汉字,英文或数字' : null}
+                </div>
+
+                <div className='leaveMessageFormContext'>
+                    <span>留言内容:</span>
+                    <textarea
+                        placeholder='请输入留言'
+                        maxLength={155} ref={textareaRef}
+                        onFocus={() => textareaRef.current.style.backgroundColor = "#000"}
+                        onBlur={() => textareaRef.current.style.backgroundColor = "transparent"}
+                        onChange={(e) => { this.setState({ textareaValue: e.target.value }) }}
+                    >
+                    </textarea>
+                </div>
+
+                <div className='leaveMessageFormSubBtn'>
+                    <Button type="primary" onClick={() => this.submitComment()} disabled={diableSubBtn}>
+                        提交留言
+                    </Button>
+                </div>
             </div>
         </div>
     }
