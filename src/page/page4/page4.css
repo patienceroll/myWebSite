@@ -50,6 +50,15 @@
         padding: 11rem 6rem 5rem;
         display: flex;
     }
+    .messageBoardTitle{
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,-102%);
+        font-size: 3rem;
+        font-weight: bold;
+        color: #fff;
+        z-index: 99;
+    }
     /* 留言板样式 */
     .messageBoard{
         flex: 2;
@@ -76,16 +85,7 @@
         background-color: transparent;
     }
 
-    .messageBoardTitle{
-        position: absolute;
-        left: 50%;
-        top:0;
-        transform: translate(-50%,-102%);
-        font-size: 3rem;
-        font-weight: bold;
-        color: #fff;
-        z-index: 99;
-    }
+
 
     /* 留言表单 */
     .leaveMessageForm{
