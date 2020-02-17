@@ -1,8 +1,3 @@
-@keyframes change
-{
-from {opacity: 0;}
-to {opacity: 1;}
-}
 
 .page2Container{
     height: 100%;
@@ -12,4 +7,70 @@ to {opacity: 1;}
     background-position: center;
     background-repeat: no-repeat;
     animation: change 1.5s;
+}
+
+@media screen and (min-width:901px){
+    .page2Container{
+        box-sizing: border-box;
+        padding: 11rem 6rem 5rem;
+    }
+    /* 第二页标题 */
+    .page2Title{
+        position: absolute;
+        left: 11rem;
+        transform: translate(-50%,-102%);
+        font-size: 3rem;
+        font-weight: bold;
+        color: #fff;
+        z-index: 99;
+    }
+    /* 第二页项目内容盒子 */
+    .page2Program{
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid #fff; */
+        border-radius: 1rem;
+        overflow-y: scroll;
+    }
+    .page2Program::-webkit-scrollbar{
+        width: 1rem;
+    }
+    .page2Program::-webkit-scrollbar-button{
+        display: none;
+    }
+    .page2Program::-webkit-scrollbar-thumb{
+        border-radius: 0.4rem;
+        background-color: #ffeb00;
+    }
+    .page2Program::-webkit-scrollbar-track{
+        background-color: transparent;
+    }
+
+    /* 项目卡片每一项样式 */
+    .programCard{
+        float: left;
+        width: 25%;
+        height: 31.45rem;
+        margin: 2rem;
+        background-color: #ffeb00;
+        border: 4px #ffeb00 solid;
+        animation: programCardIn 1s ease;
+    }
+    .programCard:hover{
+        transform: scale(1.1);
+        box-shadow: 25px 25px 0px 0px rgba(0,0,0,0.3);
+
+    }
+    .ant-card-cover{
+        overflow: hidden;
+        height: 20.25rem;
+    }
+    .card-cover-inner img{
+        width: 100%;
+    }
+    .card-cover-inner{
+        width: 100%;
+        transition: all 2s linear;
+    }
+
 }

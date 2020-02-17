@@ -63,12 +63,10 @@
   }
 
   .contactWay i{
-    vertical-align: middle;
     margin-right: 1rem;
   }
 
   .phone{
-    vertical-align: middle;
     float: left;
   }
 
@@ -78,7 +76,6 @@
   }
 
   .email{
-    vertical-align: middle;
     float: left;
   }
 

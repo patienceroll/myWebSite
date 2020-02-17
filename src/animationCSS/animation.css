@@ -34,3 +34,29 @@
         transform: translateY(0);
       }
     }
+
+    @keyframes programCardIn{
+      from{
+        transform: translateY(100%);
+      }
+      to{
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes messageBoardTitle{
+      from{
+        transform: translate(-50%,0);
+      }
+      to{
+        transform: translate(-50%,-102%);
+      }
+    }
+    @keyframes messageBoard{
+      from{
+        transform: translateY(50%);
+      }
+      to{
+        transform: translateY(0);
+      }
+    }

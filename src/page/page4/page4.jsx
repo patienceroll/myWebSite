@@ -29,7 +29,7 @@ class Page4 extends React.Component {
 
     // 获取留言列表数据
     async getMseeageList() {
-        const data = await (await fetch('http://114.55.28.254/:3000/myWebSite/getComments', { mode: 'cors' })).json();
+        const data = await (await fetch('http://114.55.28.254:3000/myWebSite/getComments', { mode: 'cors' })).json();
         this.setState({ messageList: JSON.parse(data).reverse(), showLoading: false });
     }
 
@@ -94,7 +94,7 @@ class Page4 extends React.Component {
     async praiseComment(index) {
         const { messageList, replyCommentText } = this.state;
         // 发送点赞请求
-        const result = JSON.parse(await (await fetch('http://114.55.28.254/:3000/myWebSite/praise', {
+        const result = JSON.parse(await (await fetch('http://114.55.28.254:3000/myWebSite/praise', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ id: messageList[index]._id, content: replyCommentText }),
@@ -111,7 +111,7 @@ class Page4 extends React.Component {
     async disApproveComment(index) {
         const { messageList } = this.state;
         // 发送踩一下请求
-        const result = JSON.parse(await (await fetch('http://114.55.28.254/:3000/myWebSite/disapprove', {
+        const result = JSON.parse(await (await fetch('http://114.55.28.254:3000/myWebSite/disapprove', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ id: messageList[index]._id }),
@@ -136,7 +136,7 @@ class Page4 extends React.Component {
             await this.creatRandomName();
         }
         // 发送请求
-        const result = JSON.parse(await (await fetch('http://114.55.28.254/:3000/myWebSite/replyComment', {
+        const result = JSON.parse(await (await fetch('http://114.55.28.254:3000/myWebSite/replyComment', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ id: messageList[index]._id, content: replyCommentText, name: nameIptValue }),
@@ -156,12 +156,12 @@ class Page4 extends React.Component {
             await this.creatRandomName();
         }
         // 如果留言内容为空 直接返回
-        if(!textareaValue.trim()){
+        if (!textareaValue.trim()) {
             return window.alert('内容不能为空！')
         }
         // 禁用提交按钮
         this.setState({ diableSubBtn: true });
-        const result = JSON.parse(await (await fetch('http://114.55.28.254/:3000/myWebSite/submitComment', {
+        const result = JSON.parse(await (await fetch('http://114.55.28.254:3000/myWebSite/submitComment', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name: nameIptValue, content: textareaValue }),
@@ -186,53 +186,54 @@ class Page4 extends React.Component {
     render() {
         const { showLoading, nameIptValue, diableSubBtn } = this.state;
         return <div className='page4Container'>
-            <div className='messageBoardTitle'>留言板</div>
+         
+                <div className='messageBoardTitle'>留言板</div>
 
-            {/* 留言板展示列表 */}
-            <div className='messageBoard' id='messageBoard'>
-                <div className='messageList'>
-                    {showLoading ? ShowLoading('留言板加载中...') : this.renderMessageList()}
-                </div>
-            </div>
-
-            {/* 留言表单 */}
-            <div className='leaveMessageForm'>
-                <div className='leaveMessageFormTitle'>留言</div>
-
-                <div className='leaveMessageFormName'>
-                    <span>姓名(昵称):</span>
-                    <input
-                        value={nameIptValue}
-                        placeholder='请输入任意字符作为姓名'
-                        onFocus={e => e.target.style.backgroundColor = "#000"}
-                        onBlur={e => e.target.style.backgroundColor = "transparent"}
-                        onChange={e => { this.setState({ nameIptValue: e.target.value }); localStorage.setItem('nameIptValue', e.target.value); }}
-                    ></input>
+                {/* 留言板展示列表 */}
+                <div className='messageBoard' id='messageBoard'>
+                    <div className='messageList'>
+                        {showLoading ? ShowLoading('留言板加载中...') : this.renderMessageList()}
+                    </div>
                 </div>
 
+                {/* 留言表单 */}
+                <div className='leaveMessageForm'>
+                    <div className='leaveMessageFormTitle'>留言</div>
 
-                <div className='leaveMessageFormWarm'>
-                    {/^[\u4e00-\u9fa5a-zA-Z0-9]{3,15}$/.test(nameIptValue) ? null : '请输入3-15位的汉字,英文或数字'}
-                </div>
+                    <div className='leaveMessageFormName'>
+                        <span>姓名(昵称):</span>
+                        <input
+                            value={nameIptValue}
+                            placeholder='请输入任意字符作为姓名'
+                            onFocus={e => e.target.style.backgroundColor = "#000"}
+                            onBlur={e => e.target.style.backgroundColor = "transparent"}
+                            onChange={e => { this.setState({ nameIptValue: e.target.value }); localStorage.setItem('nameIptValue', e.target.value); }}
+                        ></input>
+                    </div>
 
-                <div className='leaveMessageFormContext'>
-                    <span>留言内容:</span>
-                    <textarea
-                        placeholder='请输入留言'
-                        maxLength={155} ref={textareaRef}
-                        onFocus={() => textareaRef.current.style.backgroundColor = "#000"}
-                        onBlur={() => textareaRef.current.style.backgroundColor = "transparent"}
-                        onChange={(e) => { this.setState({ textareaValue: e.target.value }) }}
-                    >
-                    </textarea>
-                </div>
 
-                <div className='leaveMessageFormSubBtn'>
-                    <Button type="primary" onClick={() => this.submitComment()} disabled={diableSubBtn}>
-                        提交留言
+                    <div className='leaveMessageFormWarm'>
+                        {/^[\u4e00-\u9fa5a-zA-Z0-9]{3,15}$/.test(nameIptValue) ? null : '请输入3-15位的汉字,英文或数字'}
+                    </div>
+
+                    <div className='leaveMessageFormContext'>
+                        <span>留言内容:</span>
+                        <textarea
+                            placeholder='请输入留言'
+                            maxLength={155} ref={textareaRef}
+                            onFocus={() => textareaRef.current.style.backgroundColor = "#000"}
+                            onBlur={() => textareaRef.current.style.backgroundColor = "transparent"}
+                            onChange={(e) => { this.setState({ textareaValue: e.target.value }) }}
+                        >
+                        </textarea>
+                    </div>
+
+                    <div className='leaveMessageFormSubBtn'>
+                        <Button type="primary" onClick={() => this.submitComment()} disabled={diableSubBtn}>
+                            提交留言
                     </Button>
+                    </div>
                 </div>
-            </div>
         </div>
     }
 }
