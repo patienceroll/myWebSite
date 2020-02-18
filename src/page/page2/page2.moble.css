@@ -1,0 +1,43 @@
+
+
+@media screen and (max-width:900px){
+
+    .page2Container{
+        padding: 5rem 1rem 6.5rem;
+    }
+    .page2Title{
+        left: 2rem;
+        transform: translateY(-65%);
+        z-index: 1;
+        animation: titleM 1s ease;
+    }
+
+    .page2Program{
+        padding:20% 1rem;
+        white-space: nowrap;
+        overflow-y: hidden;
+    }
+    .programCard{
+
+        width: 80%;
+        height: 100%;
+        margin-right:10%;
+        display: inline-block;
+        background-color: #ffeb00;
+        border: 4px #ffeb00 solid;
+        box-shadow: 15px 15px 0px 0px rgba(0,0,0,0.3);
+        animation: programCardIn 1s ease;
+    }
+    .ant-card-cover{
+        overflow: hidden;
+        height: 70%;
+    }
+    .card-cover-inner{
+        white-space: normal;
+        height: 100%;
+    }
+    .ant-card-meta-description{
+        display: inline;
+        vertical-align: top;
+    }
+}

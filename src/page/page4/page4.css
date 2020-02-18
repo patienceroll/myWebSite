@@ -42,6 +42,25 @@
     color:#ffeb00 ;
 }
 
+  
+.messageBoard::-webkit-scrollbar{
+    width: 1rem;
+}
+.messageBoard::-webkit-scrollbar-button{
+    display: none;
+}
+.messageBoard::-webkit-scrollbar-thumb{
+    border-radius: 0.4rem;
+    background-color: #ffeb00;
+}
+.messageBoard::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+.messageBoard::-webkit-scrollbar-corner{
+    display: none;
+}
+
 
 /* // 大屏幕样式 */
 @media screen and (min-width:901px){
@@ -75,20 +94,7 @@
         overflow-y: scroll;
         animation:  messageBoard    1s ease;
     }
-    
-    .messageBoard::-webkit-scrollbar{
-        width: 1rem;
-    }
-    .messageBoard::-webkit-scrollbar-button{
-        display: none;
-    }
-    .messageBoard::-webkit-scrollbar-thumb{
-        border-radius: 0.4rem;
-        background-color: #ffeb00;
-    }
-    .messageBoard::-webkit-scrollbar-track{
-        background-color: transparent;
-    }
+  
 
 
 

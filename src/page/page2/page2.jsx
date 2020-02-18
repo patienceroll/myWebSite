@@ -2,6 +2,7 @@ import React from 'react';
 
 import '../../animationCSS/animation.css';
 import './page2.css';
+import './page2.moble.css';
 
 // ant 组件
 import { Card } from 'antd';
@@ -11,6 +12,7 @@ class Page2 extends React.Component {
 
     state = {
         programList: [
+            // 这部分数据以后会用服务器传输
             {
                 adress: 'http://114.55.28.254/sars/',
                 title: '2020新型肺炎疫情关注Demo',
@@ -40,8 +42,7 @@ class Page2 extends React.Component {
         const height = getHopeElement.clientHeight;
         getHopeElement.style.transform = `translateY(-${(height - 243) > 0 ? (height - 243) : 0}px)`;
     }
-
-
+ 
     renderProgramList() {
         const { programList } = this.state;
         return programList.map((item, index) => <Card

@@ -63,3 +63,33 @@
         transform: translateY(0);
       }
     }
+
+    @keyframes title{
+      from{
+        transform: translate(-50%,0);
+      }
+      to{
+        transform: translate(-50%,-102%);
+      }
+    }
+
+
+    /* 部分小屏幕动画 */
+
+    @keyframes titleM{
+      from{
+        transform: translateY(0);
+      }
+      to{
+        transform: translateY(-65%);
+      }
+    }
+    
+    @keyframes boxM{
+      from{
+        transform: translateY(65%);
+      }
+      to{
+        transform: translateY(0);
+      }
+    }

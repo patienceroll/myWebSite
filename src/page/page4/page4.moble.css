@@ -1,0 +1,101 @@
+@media screen and (max-width:900px){
+    .page4Container{
+        box-sizing: border-box;
+        padding: 5rem 1rem 6.5rem;
+        overflow: hidden;
+    }
+    .messageBoardTitle{
+        position: absolute;
+        left: 2rem;
+        transform: translateY(-65%);
+        font-size: 3rem;
+        font-weight: bold;
+        color: #fff;
+        z-index: 1;
+        animation: titleM 1s ease;
+    }
+    /* 留言板 */
+    .messageBoard{
+        margin: 2rem 0 1rem 2rem;
+        height: 70%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        animation: boxM 1s ease;
+    }
+    .messageList{
+        height: 100%;
+    }
+    .messageBoard::-webkit-scrollbar-track{
+        background-color: rgba(39, 39, 39, 0.6);
+        border-radius: 0.4rem;
+    }
+    /* 留言表单盒子 */
+    .leaveMessageForm{
+        background-color: rgba(39, 39, 39, 0.6);
+        margin-top: 1rem;
+        height: 25%;
+        animation: boxM 1s ease;
+    }
+    .leaveMessageFormTitle{
+        display: none;
+    }
+    /* 姓名表单 */
+    .leaveMessageFormName{
+
+        display: flex;
+        text-align: center;
+    }
+    .leaveMessageFormName span{
+        flex:1;
+    }
+    .leaveMessageFormName input{
+        width: 80%;
+        flex: 1;
+        color:#fff;   
+        border: none; 
+        background: transparent;
+        outline: none;
+        text-align: center;
+    }
+    .leaveMessageFormWarm{
+        text-align: right;
+        padding-right: 2rem ;
+        width: 100%;
+        height: 1.8rem;
+        color: #ffeb00;
+    }
+
+    /* 留言内容文本表单 */
+    .leaveMessageFormContext{
+        display: flex;
+        text-align: center;
+        height: 2.5rem;
+    }
+    .leaveMessageFormContext textarea{
+        flex: 1;
+        height: 2.5rem;
+        width:80%;
+        background-color:rgba(0, 0, 0, 0);
+        color: #fff;
+        outline: none;
+        text-align: center;
+        resize: none;
+    }
+    .leaveMessageFormContext textarea::placeholder{
+        line-height:2rem;
+        color: #fff;
+    }
+
+    .leaveMessageFormContext span{
+        line-height: 2.5rem;
+        flex: 1;
+    }
+    .leaveMessageFormSubBtn{
+        margin-top: 1rem;
+    }
+
+    .leaveMessageFormSubBtn button{
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+}
