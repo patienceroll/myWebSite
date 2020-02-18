@@ -30,10 +30,10 @@ class Page4 extends React.Component {
 
     // 获取留言列表数据
     async getMseeageList() {
-        // const data = await (await fetch('http://114.55.28.254:3000/myWebSite/getComments', { mode: 'cors' })).json();
-        // this.setState({ messageList: JSON.parse(data).reverse(), showLoading: false });
-        const data = await (await fetch('http://localhost:3000/myWebSite/getComments', { mode: 'cors' })).json();
+        const data = await (await fetch('http://114.55.28.254:3000/myWebSite/getComments', { mode: 'cors' })).json();
         this.setState({ messageList: JSON.parse(data).reverse(), showLoading: false });
+        // const data = await (await fetch('http://localhost:3000/myWebSite/getComments', { mode: 'cors' })).json();
+        // this.setState({ messageList: JSON.parse(data).reverse(), showLoading: false });
     }
 
 
