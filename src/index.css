@@ -1,15 +1,93 @@
-/* 小屏幕适配样式 */
-@media screen and (max-width:900px){
+/* 公共样式使用于大小屏幕 */
 
+body{
+  background-color: #000;
+}
+/* 侧边栏呼出按钮公共样式 */
+.line1{
+  width: 3.25rem;
+  height: 0.2rem;
+  margin-bottom: 0.715rem;
+  border-top: 0.2rem solid #fff;
+  transition: all 1s;
+  transform-origin: 0 0;
+
+}
+.line1Rotate{
+  transform: rotate(43deg);
+}
+.line2{
+  width: 3.25rem;
+  height: 0.2rem;
+  margin-bottom: 0.715rem;
+  border-top: 0.2rem solid #fff;
+  transition: all 1s;
+}
+.line2Rotate{
+  transform: translateX(100%);
+}
+.line3{
+  width: 3.25rem;
+  height: 0.2rem;
+  border-top: 0.2rem solid #fff;
+  transition: all 1s;
+  transform-origin:  0 0;
+}
+.line3Rotate{
+  transform: rotate(-43deg);
+}
+
+/* 侧边栏里面的内容公共样式 */
+.myName{
+  font-size: 3.25rem;
+  margin: 0;
+}
+.livingPlace{
+  margin-top: 4rem;
+}
+.graduation{
+  margin-top: 2rem;
+}
+.hobby{
+  margin-top: 2rem;
+}
+.myGitHub{
+  margin-top: 2rem;
+}
+.myBlog{
+  margin-top: 2rem;
+}
+.phoneSideBar{
+  margin-top: 2rem;
+}
+.emailSideBar{
+  margin-top: 2rem;
+}
+.myResume{
+  margin-top: 2rem;
+}
+.myGitHub>a,.myBlog>a{
+  font-size: 1.2rem;
+}
+.sideBarContainer i{
+  vertical-align: middle;
+  margin-right: 1.5rem;
 }
 
 
-/* 大屏幕样式 */
+
+
+
+
+
+
+
+
+/*
+ **大屏幕样式**
+*/
 @media screen and (min-width:901px){
 
-  body{
-    background-color: #000;
-  }
 
   /* 导航栏样式 */
   .navListIcon{
@@ -89,38 +167,7 @@
     overflow: hidden;
     z-index:99;
   }
-  .line1{
-    width: 3.25rem;
-    height: 0.2rem;
-    margin-bottom: 0.715rem;
-    border-top: 0.2rem solid #fff;
-    transition: all 1s;
-    transform-origin: 0 0;
 
-  }
-  .line1Rotate{
-    transform: rotate(43deg);
-  }
-  .line2{
-    width: 3.25rem;
-    height: 0.2rem;
-    margin-bottom: 0.715rem;
-    border-top: 0.2rem solid #fff;
-    transition: all 1s;
-  }
-  .line2Rotate{
-    transform: translateX(100%);
-  }
-  .line3{
-    width: 3.25rem;
-    height: 0.2rem;
-    border-top: 0.2rem solid #fff;
-    transition: all 1s;
-    transform-origin:  0 0;
-  }
-  .line3Rotate{
-    transform: rotate(-43deg);
-  }
 
   /* 侧边栏样式 */
   .sideBarContainer{
@@ -143,10 +190,7 @@
     visibility: visible;
     transform: translateX(0);
   }
-  .sideBarContainer i{
-    vertical-align: middle;
-    margin-right: 1.5rem;
-  }
+
   .tapScreenCloseSideBar{
     position: fixed;
     top: 0;
@@ -158,42 +202,9 @@
   .showTapScreenCloseSideBar{
     display: block;
   }
-  .myName{
-    font-size: 3.25rem;
-    margin: 0;
-  }
-  .livingPlace{
-    margin-top: 4rem;
-  }
-  .graduation{
-    margin-top: 2rem;
-  }
-  .hobby{
-    margin-top: 2rem;
-  }
-  .myGitHub{
-    margin-top: 2rem;
-  }
-  .myBlog{
-    margin-top: 2rem;
-  }
-  .phoneSideBar{
-    margin-top: 2rem;
-  }
-  .emailSideBar{
-    margin-top: 2rem;
-  }
-  .myResume{
-    margin-top: 2rem;
-  }
-  .myGitHub>a,.myBlog>a{
-    font-size: 1.2rem;
-  }
-}
+ 
 
-
-/* 公共样式 */
-/* 音乐播放控件样式 */
+  
 .wiget{
   box-sizing: border-box;
   float: left;
@@ -232,3 +243,5 @@
 .audio{
   display: none;
 }
+}
+

@@ -3,6 +3,7 @@ import React from 'react';
 // 样式
 import '../../animationCSS/animation.css';
 import './home.css';
+import './home.moble.css';
 
 import { Icon } from 'antd';
 

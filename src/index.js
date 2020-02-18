@@ -6,6 +6,7 @@ import 'antd/dist/antd.css';
 import './initStyle.css';
 import './animationCSS/animation.css';
 import './index.css';
+import './index.moble.css';
 
 // 组件
 import Home from './page/home/home.jsx';
@@ -165,7 +166,7 @@ class Header extends React.Component {
             <div
                 className={sideBarBtnX ? 'sideBarContainer sideBarContainerDisplay' : 'sideBarContainer'}
             >
-                <div style={{ width: '100%', height: '100%', animation: sideBarBtnX ? 'sideBarContextIn 0.8s linear ':null }}>
+                <div style={{ width: '100%', height: '100%', animation: sideBarBtnX ? 'sideBarContextIn 1.5s ease ':null }}>
                     <p className='myName'>张显磊</p>
                     <div className='livingPlace'>
                         <Icon type="environment" theme="filled" />

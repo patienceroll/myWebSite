@@ -1,0 +1,90 @@
+/* 小屏幕样式 */
+@media screen and (max-width:900px){
+    /* 导航圆圈 */
+    .navListIcon{
+        display: none;
+    }
+
+    /* header 头部 */
+    .header{
+        position: fixed;
+        width: 100%;
+        color: #fff;
+        z-index: 99;
+    }
+
+    /* 音乐播放盒子 */
+    .controler{
+        position: fixed;
+        bottom: 1rem;
+        width: 100%;
+        height: 3.5rem;
+        color: #fff;
+        display: flex;
+        font-size: 1.5rem;
+        text-align: center;
+        justify-content: space-around;
+        line-height: 3.5rem;
+    }
+    .wiget{
+        flex: 1;
+        font-size: 3rem;
+        text-align: left;
+        margin-left: 1rem;
+    }
+    .wiget i{
+        margin-left: 15%;
+    }
+    .musicTitle{
+        width: 100%;
+        flex: 1;
+        overflow: hidden;
+        white-space: nowrap;
+        margin-right: 10%;
+    }
+    .musicTitle span{
+        display: block;
+        animation: contextCarousel 10s linear 2s infinite;
+    }
+
+    /* 联系方式样式 */
+    .contactWay{
+        display: none;
+    }
+
+    /* 侧边内容框按钮 */
+    .sideBarBtn{
+        z-index: 999;
+        position: fixed;
+        top: 3.25rem;
+        right: 3.25rem;
+        height: 2rem;
+        width: 2rem;
+        overflow: hidden;
+    }
+
+    /* 侧边栏盒子 */
+    .sideBarContainer{
+        position: fixed;
+        top:0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: #eee;
+        background-color: rgba(39, 39, 39, 0.8);
+        transition: all 1s ease;
+        visibility: hidden;
+        transform: translateX(100%);
+        padding: 3rem 0 4rem 5rem;
+    }
+    .sideBarContainerDisplay{
+        visibility: visible;
+        transform: translateX(0);
+    }
+    .tapScreenCloseSideBar{
+        display: none;
+    }
+}
