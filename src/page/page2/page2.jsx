@@ -18,10 +18,10 @@ class Page2 extends React.Component {
                 title: '2020新型肺炎疫情关注Demo',
                 content: '主要展示了新型冠状肺炎的地图疫情,数据变化曲线,数据表,以及最近进展.',
                 images: [
-                    'https://github.com/patienceroll/sars-situation/raw/master/readMeData/1.png',
-                    'https://github.com/patienceroll/sars-situation/raw/master/readMeData/2.png',
-                    'https://github.com/patienceroll/sars-situation/raw/master/readMeData/3.png',
-                    'https://github.com/patienceroll/sars-situation/raw/master/readMeData/4.png',
+                    './images/sars/1.png',
+                    './images/sars/2.png',
+                    './images/sars/3.png',
+                    './images/sars/4.png'
                 ]
             },
             {
@@ -29,8 +29,8 @@ class Page2 extends React.Component {
                 title: 'toDoList-ReduxDemo',
                 content: '使用redux编写的toDoList小Demo',
                 images: [
-                    'https://github.com/patienceroll/toDoList-reduxDemo/raw/master/public/IntrolImages/1.jpg',
-                    'https://github.com/patienceroll/toDoList-reduxDemo/raw/master/public/IntrolImages/2.jpg'
+                    './images/todo/1.png',
+                    './images/todo/2.png'
                 ]
             }
         ]
