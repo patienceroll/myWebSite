@@ -31,7 +31,8 @@
     }
     /* 留言表单盒子 */
     .leaveMessageForm{
-        background-color: rgba(39, 39, 39, 0.6);
+        border-radius: 3rem;
+        background-color: rgba(39, 39, 39, 0.3);
         margin-top: 1rem;
         height: 25%;
         animation: boxM 1s ease;
@@ -80,6 +81,7 @@
         outline: none;
         text-align: center;
         resize: none;
+        border-width: 0;
     }
     .leaveMessageFormContext textarea::placeholder{
         line-height:2rem;
@@ -97,5 +99,7 @@
     .leaveMessageFormSubBtn button{
         margin-left: 50%;
         transform: translateX(-50%);
+        background-color: #ccaa00;
+        border-width: 0;
     }
 }

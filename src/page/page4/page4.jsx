@@ -80,9 +80,9 @@ class Page4 extends React.Component {
                 avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="Han Solo" />}
                 content={<p className='commentContent'>{item.content}</p>}
                 datetime={item.createTime}
-                children={item.comments.length && item.comments.map(itemSon =>
+                children={item.comments.length && item.comments.map((itemSon,indexSon) =>
                     <Comment
-                        key={itemSon.name}
+                        key={indexSon}
                         author={itemSon.name}
                         datetime={itemSon.createTime}
                         content={<p className='commentContent'>{itemSon.content}</p>}

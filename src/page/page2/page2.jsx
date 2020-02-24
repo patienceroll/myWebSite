@@ -29,8 +29,8 @@ class Page2 extends React.Component {
                 title: 'toDoList-ReduxDemo',
                 content: '使用redux编写的toDoList小Demo',
                 images: [
-                    './images/todo/1.png',
-                    './images/todo/2.png'
+                    './images/todo/1.jpg',
+                    './images/todo/2.jpg'
                 ]
             }
         ]
