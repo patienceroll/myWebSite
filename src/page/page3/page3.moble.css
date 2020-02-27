@@ -1,0 +1,12 @@
+@media screen and (max-width:900px){
+    .page3Container{
+        padding: 5rem 1rem 6.5rem;
+    }
+    .page3Title{
+        left: 2rem;
+        transform: translateY(-65%);
+        z-index: 1;
+        animation: titleM 1s ease;
+    }
+    
+}

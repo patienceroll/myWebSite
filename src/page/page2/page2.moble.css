@@ -34,7 +34,8 @@
     }
     .card-cover-inner{
         white-space: normal;
-        height: 100%;
+        /* height: 100%; */
+        animation: coverM 15s ease 3s infinite;
     }
     .ant-card-meta-description{
         display: inline;

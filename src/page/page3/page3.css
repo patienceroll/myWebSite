@@ -1,5 +1,4 @@
 
-
 .page3Container{
     height: 100%;
     width:100%;
@@ -8,4 +7,82 @@
     background-position: center;
     background-repeat: no-repeat;
     animation: change 1.5s;
+}
+.page3Title{
+    position: absolute;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    z-index: 99;
+}
+.page3ContainerInner{
+    position: relative;
+    height: 100%;
+}
+    /* 盒子列表的容器 */
+    .boxContainer{
+        overflow: hidden;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+      /* 类别盒子 */
+      .typeBox{
+        position: relative;
+        width: 10rem;
+        height: 10rem;
+        color: #fff;
+        text-align: center;
+        padding: 2rem 0.5rem;
+        border-radius: 1rem;
+        transition:all 0.5s ease;
+        margin: 0.3rem;
+    }
+    .typeBox p{
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom:0.5rem;
+    }
+    /* 鼠标离开盒子添加动画 */
+    /* .typeBoxAnimate{
+        animation: mouseOut 3s ease 1.5s;
+    } */
+    /* 鼠标hover样式 */
+    .typeBox:hover{
+        transform:scale(1.05);
+    }
+    .typeBox i{
+       font-size: 3rem;
+       line-height: 4rem;
+       vertical-align: bottom;
+    }
+    .typeBoxCover{
+        width: 10rem;
+        height: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+@media screen and (min-width:901px){
+    .page3Container{
+        box-sizing: border-box;
+        padding: 11rem 6rem 5rem;
+    }
+
+    .page3Title{
+        left: 11rem;
+        transform: translate(-50%,-102%);
+        animation: title 1s ease;
+    }
+
+    .typeBox{
+        margin: 1.5rem 0.3rem;
+    }
+  
+
 }

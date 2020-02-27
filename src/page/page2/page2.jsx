@@ -14,7 +14,7 @@ class Page2 extends React.Component {
         programList: [
             // 这部分数据以后会用服务器传输
             {
-                adress: 'http://114.55.28.254/sars/',
+                adress: 'http://114.55.28.254/page/sars/',
                 title: '2020新型肺炎疫情关注Demo',
                 content: '主要展示了新型冠状肺炎的地图疫情,数据变化曲线,数据表,以及最近进展.',
                 images: [
@@ -25,7 +25,7 @@ class Page2 extends React.Component {
                 ]
             },
             {
-                adress: 'http://114.55.28.254/todo/',
+                adress: 'http://114.55.28.254/page/todo/',
                 title: 'toDoList-ReduxDemo',
                 content: '使用redux编写的toDoList小Demo',
                 images: [
