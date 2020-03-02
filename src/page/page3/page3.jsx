@@ -51,7 +51,8 @@ class Page3 extends React.Component {
             },
             {
                 title: '相册',
-                describle: '花花草草的图片啦',
+                describle: '(已经有雏形了,可以点击查看...)',
+                url: 'http://114.55.28.254/page/photoalbum/',
                 itemList: [
                     {
                         name: '美食',
@@ -90,9 +91,10 @@ class Page3 extends React.Component {
                             style={{ backgroundColor: colorList[Math.floor(Math.random() * length)], animation: `programCardIn ${(index + 1) * 0.3}s ease` }}
                         >
                             {/* 盒子的覆盖层,避免事件冒泡用 */}
-                            <div className='typeBoxCover'
-                            // onMouseLeave={e=>{e.stopPropagation();e.target.parentNode.className='typeBox typeBoxAnimate'}}
-                            // onMouseEnter={e=>{e.stopPropagation();e.target.parentNode.className='typeBox'}}
+                            <div
+                                className='typeBoxCover'
+                                onClick={() => item.url && window.open(item.url)}
+
                             ></div>
                             {/* 盒子的内容 */}
                             {

@@ -18,10 +18,10 @@ class Page2 extends React.Component {
                 title: '2020新型肺炎疫情关注Demo',
                 content: '主要展示了新型冠状肺炎的地图疫情,数据变化曲线,数据表,以及最近进展.',
                 images: [
-                    './images/sars/1.png',
-                    './images/sars/2.png',
-                    './images/sars/3.png',
-                    './images/sars/4.png'
+                    './images/sars/1.jpg',
+                    './images/sars/2.jpg',
+                    './images/sars/3.jpg',
+                    './images/sars/4.jpg'
                 ]
             },
             {
