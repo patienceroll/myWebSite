@@ -52,7 +52,7 @@ class Page3 extends React.Component {
             {
                 title: '相册',
                 describle: '(已经有雏形了,可以点击查看...)',
-                url: 'http://114.55.28.254/page/photoalbum/',
+                url: 'http://dynamicbear.top/page/photoalbum/',
                 itemList: [
                     {
                         name: '美食',

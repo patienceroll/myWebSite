@@ -13,4 +13,8 @@
     .contextContainer div span{
         color:#ffeb00;
     }
+    
+    .homeContainer>a{
+        display: none;
+      }
 }

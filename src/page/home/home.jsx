@@ -29,6 +29,7 @@ class Home extends React.Component {
                 </div>
                 <p>这是patience的个人网站,将持续更新...</p>
             </div>
+            <a href='http://www.beian.miit.gov.cn/' target='blank'>渝ICP备20001509号</a>
         </div>
     }
 }
